@@ -1,0 +1,15 @@
+= simple_form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      ul
+        - @user.errors.full_messages.each do |message|
+          li = message
+
+  .form-inputs
+    = f.input :name, :autofocus => true
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+  .form-actions
+    = f.button :submit

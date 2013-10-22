@@ -1,0 +1,27 @@
+h1 Listing articles
+
+table
+  tr
+    th Subject
+    th Body
+    th User
+    th Image
+    -if user_signed_in?
+      th
+      th
+      th
+
+  - @articles.each do |article|
+    tr
+      td = article.subject
+      td = article.body
+      td = article.user.name
+      td = image_tag article.avatar.url if article.avatar
+      -if user_signed_in?
+        td = link_to 'Show', article
+        td = link_to 'Edit', edit_article_path(article)
+        td = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Article', new_article_path

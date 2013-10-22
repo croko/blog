@@ -1,0 +1,18 @@
+doctype html
+html lang="ru"
+  head
+    meta charset="utf-8" /
+    meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    title= content_for?(:title) ? yield(:title) : "Blog"
+    = csrf_meta_tags
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+
+  body
+    - if user_signed_in?
+      p= link_to 'Редактировать свою учетную запись', edit_user_path(current_user)
+      p= link_to 'Выйти', destroy_user_session_path, :method => :delete
+    - else
+      = link_to 'Войти', new_user_session_path
+    = yield

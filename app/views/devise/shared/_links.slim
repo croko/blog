@@ -1,0 +1,11 @@
+- if controller_name != 'sessions'
+  p= link_to "Войти", new_session_path(resource_name)
+- if devise_mapping.registerable? && controller_name != 'registrations'
+  p= link_to "Зарегистрироваться", new_registration_path(resource_name)
+- if devise_mapping.recoverable? && controller_name != 'passwords'
+  p= link_to "Забыли пароль?", new_password_path(resource_name)
+
+
+| С помощью
+p= link_to 'Вконтакте', omniauth_authorize_path('user', 'vkontakte')
+p= link_to 'Email', new_user_session_path

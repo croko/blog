@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: avatars
+#
+#  id                :integer          not null, primary key
+#  article_id        :integer
+#  data_file_name    :string(255)
+#  data_content_type :string(255)
+#  data_file_size    :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  data_file_name: MyString
+  data_content_type: MyString
+  data_file_size: MyString
+
+two:
+  user_id: 1
+  data_file_name: MyString
+  data_content_type: MyString
+  data_file_size: MyString

@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id           :integer          not null, primary key
+#  subject      :string(255)
+#  body         :text
+#  user_id      :integer
+#  datafile_url :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  subject: MyString
+  body: MyText
+  user_id: 
+  datafile_url: MyString
+
+two:
+  subject: MyString
+  body: MyText
+  user_id: 
+  datafile_url: MyString
